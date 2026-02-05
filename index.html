@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>RAVEN | Intelligence. Vision. Adaptability.</title>
+        <meta name="description" content="Modern consultancy firm specializing in Subsurface Oil & Gas expertise and Digital Transformation. Engineering excellence meets innovation.">
+        <meta name="keywords" content="Oil and Gas, Digital Transformation, Engineering, Consultancy, Data Science, Ravensas">
+        <meta name="author" content="Raven SAS">
+        <meta name="robots" content="index, follow">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="static/icons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="static/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="static/icons/favicon-16x16.png">
+        <link rel="shortcut icon" href="static/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#0a0a0a">
+        <meta name="theme-color" content="#0a0a0a">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.ravensas.com/">
+        <meta property="og:title" content="RAVEN | Intelligence. Vision. Adaptability.">
+        <meta property="og:description" content="Engineering excellence and digital innovation for the Oil & Gas industry.">
+        <meta property="og:image" content="static/social/og-preview-1200x630.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:type" content="image/png">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@ravensas">
+        <meta name="twitter:title" content="RAVEN | Intelligence. Vision. Adaptability.">
+        <meta name="twitter:description" content="9 years of experience blending Subsurface expertise and Digital Transformation.">
+        <meta name="twitter:image" content="static/social/twitter-card-1200x600.png">
+
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#111111",
+                            "background-light": "#ffffff",
+                            "background-dark": "#0a0a0a",
+                            "accent-gray": "#666666"
+                        },
+                        fontFamily: {
+                            sans: ["Inter", "sans-serif"],
+                            display: ["Montserrat", "sans-serif"],
+                        }
+                    },
+                },
+            };
+        </script>
+        
+        <style type="text/tailwindcss">
+            @layer utilities {
+                .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+                .dropdown:hover .dropdown-menu { display: block; }
+                /* Solo el Hero mantiene la proporción cinematográfica */
+                @media (min-width: 1024px) {
+                    .hero-16-9 { min-height: 56.25vw; }
+                }
+            }
+        </style>
+    </head>
+
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300 pt-24">
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="relative h-12">
+                    <img alt="Logo RAVEN" class="h-12 w-auto dark:hidden" src="static/img/logo-light.jpg" onerror="this.src='https://placehold.co/40x40/000000/FFFFFF?text=R'"/>
+                    <img alt="Logo RAVEN" class="h-12 w-auto hidden dark:block" src="static/img/logo-dark.jpg" onerror="this.src='https://placehold.co/40x40/FFFFFF/000000?text=R'"/>
+                </div>
+                <span class="font-display font-extrabold text-3xl tracking-tighter uppercase">Raven</span>
+            </div>
+            <div class="flex items-center gap-6 lg:gap-12">            
+                <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors flex items-center justify-center" 
+                        onclick="document.documentElement.classList.toggle('dark')">
+                    <span class="material-symbols-outlined block dark:hidden text-2xl">dark_mode</span>
+                    <span class="material-symbols-outlined hidden dark:block text-2xl">light_mode</span>
+                </button>
+                <div class="hidden md:flex items-center gap-12 text-sm font-bold uppercase tracking-widest">
+                    <a class="hover:text-accent-gray transition-colors" href="#about">Who We Are</a>
+                    <div class="relative dropdown group">
+                        <button class="flex items-center gap-1 hover:text-accent-gray transition-colors uppercase tracking-widest font-bold">
+                            Services <span class="material-symbols-outlined text-sm">expand_more</span>
+                        </button>
+                        <div class="dropdown-menu hidden absolute top-full left-0 w-48 bg-white dark:bg-black border border-gray-100 dark:border-gray-800 shadow-xl py-4">
+                            <a class="block px-6 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors" href="#offering">Consultancy</a>
+                            <a class="block px-6 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors" href="#synthetic-data">Synthetic Data</a>
+                        </div>
+                    </div>
+                    <a class="px-6 py-3 bg-primary text-white hover:bg-gray-800 transition-all rounded-sm" href="#contact">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>    
+    <section class="relative h-screen w-full flex items-center overflow-hidden bg-black">
+        <div class="absolute inset-0 z-0">
+            <img alt="Raven Hero Image" 
+                class="w-full h-full object-cover object-center opacity-60" 
+                src="static/img/hero_image.jpg" 
+                onerror="this.src='https://placehold.co/1920x1080/111111/333333?text=Hero+Image'"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-12 w-full pt-20">
+            <div class="max-w-4xl text-white">
+                <div class="w-24 h-1 bg-white mb-10"></div>
+                
+                <h1 class="font-display text-[10vw] sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[0.95] sm:leading-none uppercase tracking-tighter">
+                    Intelligence.<br/>
+                    Vision.<br/>
+                    Adaptability.
+                </h1>
+
+                <p class="text-lg sm:text-2xl md:text-3xl text-gray-200 font-light leading-relaxed mb-12 border-l-4 border-white/50 pl-6 lg:pl-8 max-w-2xl">
+                    Modern consultancy at the intersection of engineering excellence and digital innovation.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row flex-wrap gap-6">
+                    <a class="bg-white text-black px-10 py-5 font-bold uppercase tracking-widest hover:bg-gray-200 transition-all text-sm text-center" href="#offering">Explore Solutions</a>
+                    <a class="border border-white/50 text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all text-sm backdrop-blur-sm text-center" href="#about">Who We Are</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full flex flex-col justify-center py-24 bg-white dark:bg-background-dark" id="about">
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                
+                <div class="lg:col-span-4">
+                    <span class="text-accent-gray dark:text-gray-500 font-bold uppercase tracking-[0.3em] text-sm block mb-6">Who We Are</span>
+                    <h2 class="text-3xl md:text-4xl font-display font-medium mb-8 dark:text-gray-200 leading-tight text-gray-800">
+                        Built on nine years <br class="hidden lg:block"> of transformation.
+                    </h2>
+                    <div class="w-20 h-1.5 bg-primary dark:bg-white mb-8"></div>
+                </div>
+
+                <div class="lg:col-span-8 space-y-10 text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed font-light">
+                    
+                    <p class="max-w-3xl">
+                        We are a <strong class="text-primary dark:text-white font-semibold">modern consultancy firm based in Colombia</strong>, <br class="hidden lg:block"> 
+                        built on the intersection of engineering excellence <br class="hidden lg:block"> 
+                        and digital innovation.
+                    </p>
+
+                    <p class="max-w-3xl">
+                        With 9 years of experience combining expertise in subsurface <br class="hidden lg:block"> 
+                        Oil & Gas and Digital Transformation, we bring together a team <br class="hidden lg:block"> 
+                        with over 100 years of combined industrial knowledge.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 border-t border-gray-100 dark:border-gray-800 pt-12">
+                        <div class="max-w-xs">
+                            <p class="text-xs font-bold uppercase tracking-widest text-accent-gray mb-4">Our Model</p>
+                            <p class="text-lg leading-snug">We operate through an agile partner-based model, leveraging a robust network of collaborators.</p>
+                        </div>
+                        <div class="max-w-xs">
+                            <p class="text-xs font-bold uppercase tracking-widest text-accent-gray mb-4">Our Philosophy</p>
+                            <p class="text-lg leading-snug">Centered on <span class="italic text-primary dark:text-white font-medium">efficient task management, measurable impact, and continuous improvement</span>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="w-full flex flex-col justify-center py-20 bg-gray-50 dark:bg-black/20 overflow-hidden relative" id="offering">
+    <div class="max-w-[1920px] mx-auto px-6 lg:px-12 w-full relative z-10">
+        <div class="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-20">
+            
+            <div class="w-full lg:w-4/12 relative">
+                
+                <div class="relative z-10">
+                    <span class="text-accent-gray dark:text-gray-500 font-bold uppercase tracking-[0.3em] text-sm block mb-6">Our Solutions</span>
+                    <h2 class="text-3xl font-display font-medium dark:text-gray-200 leading-snug text-gray-800">Service Ecosystem</h2>
+                    <div class="w-20 h-1.5 bg-primary dark:bg-white mt-8 mb-16"></div>
+                </div>
+                
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 opacity-[0.03] dark:opacity-[0.05] scale-150 pointer-events-none
+                            lg:relative lg:mt-0 lg:mr-0 lg:opacity-100 lg:scale-100 lg:flex lg:items-center lg:justify-center lg:w-[340px] lg:h-[340px]">
+                    
+                    <svg class="w-[300px] h-[280px] lg:w-full lg:h-full text-gray-900 dark:text-white lg:text-gray-300 lg:dark:text-gray-700" fill="none" viewBox="0 0 300 280">
+                        <path class="opacity-80 triangle-path" d="M150 30 L270 240 L30 240 Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+                        <path class="opacity-30" d="M150 45 L255 225 L45 225 Z" stroke="currentColor" stroke-dasharray="6 6" stroke-linejoin="round" stroke-width="1"></path>
+                    </svg>
+                    
+                    <div class="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 text-center">
+                        <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest whitespace-nowrap">Oil & Gas</span>
+                    </div>
+                    <div class="hidden lg:block absolute bottom-6 left-0 -translate-x-6 text-right">
+                        <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest block leading-tight">Project<br/>Management</span>
+                    </div>
+                    <div class="hidden lg:block absolute bottom-6 right-0 translate-x-6 text-left">
+                        <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest block leading-tight">Data<br/>Science</span>
+                    </div>
+                    <div class="hidden lg:block absolute inset-0 flex items-center justify-center">
+                        <div class="bg-white dark:bg-background-dark p-3 rounded-full border border-gray-100 dark:border-gray-800 shadow-sm">
+                            <span class="material-symbols-outlined text-2xl text-accent-gray">hub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-8/12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-2 gap-y-12 gap-x-8 lg:gap-x-12 border-l-0 lg:border-l border-gray-200 dark:border-gray-800 lg:pl-16 relative z-10">
+                
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-6 h-[2px] bg-primary dark:bg-white"></span>
+                        <h3 class="font-display font-bold text-lg uppercase tracking-widest text-primary dark:text-white">Oil & Gas</h3>
+                    </div>
+                    <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                        <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Skilled SMEs in G&G</p></li>
+                        <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Digital Transformation</p></li>
+                        <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Extensive Network</p></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-6 h-[2px] bg-primary dark:bg-white"></span>
+                        <h3 class="font-display font-bold text-lg uppercase tracking-widest text-primary dark:text-white">Project Mgt</h3>
+                    </div>
+                    <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                        <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Waterfall & Agile</p></li>
+                        <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Kanban / Kaizen</p></li>
+                        <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>AI Administration</p></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6 md:col-span-1 lg:col-span-1 xl:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-6 h-[2px] bg-primary dark:bg-white"></span>
+                        <h3 class="font-display font-bold text-lg uppercase tracking-widest text-primary dark:text-white">Data Science</h3>
+                    </div>
+                    <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                        <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Data Processing</p></li>
+                        <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Advanced Analytics</p></li>
+                        <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>ML & AI Development</p></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="ratio-16-9 w-full flex flex-col justify-center py-20 bg-gray-50 dark:bg-black/40" id="synthetic-data">
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12 w-full">
+            <div class="mb-20">
+                <span class="text-accent-gray dark:text-gray-500 font-bold uppercase tracking-[0.3em] text-sm block mb-6">Core Offering</span>
+                <h2 class="text-2xl md:text-3xl font-display font-medium dark:text-gray-200 leading-snug text-gray-800">Synthetic Data Engine</h2>
+                <div class="w-20 h-1.5 bg-primary dark:bg-white mt-8"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="p-16 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all group h-full flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-6 mb-10">
+                            <span class="material-symbols-outlined text-5xl group-hover:scale-110 transition-transform dark:text-white">target</span>
+                            <h4 class="text-3xl font-bold uppercase dark:text-white">Objective</h4>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-2xl leading-relaxed mb-10 font-light">
+                            Generation of realistic synthetic data from general field descriptions. Our engine allows for model calibration using real data points for unprecedented accuracy.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 text-base text-accent-gray mt-auto">
+                        <span class="w-16 h-[2px] bg-accent-gray"></span>
+                        <span class="font-medium tracking-wide uppercase text-sm">Precise field description calibration</span>
+                    </div>
+                </div>
+                
+                <div class="p-16 bg-primary text-white border border-primary hover:shadow-2xl transition-all group h-full flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-6 mb-10">
+                            <span class="material-symbols-outlined text-5xl group-hover:scale-110 transition-transform">auto_graph</span>
+                            <h4 class="text-3xl font-bold uppercase">Business Value</h4>
+                        </div>
+                        <ul class="space-y-10">
+                            <li class="flex gap-8">
+                                <span class="text-white/30 font-display text-5xl font-bold">01</span>
+                                <div>
+                                    <p class="text-white text-2xl font-medium mb-2 uppercase">Algorithm Testing</p>
+                                    <p class="text-white/70 font-light text-lg">Test algorithms and software with realistic data without compromising integrity.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-8">
+                                <span class="text-white/30 font-display text-5xl font-bold">02</span>
+                                <div>
+                                    <p class="text-white text-2xl font-medium mb-2 uppercase">Data Anonymization</p>
+                                    <p class="text-white/70 font-light text-lg">Share data across departments or with partners without regulatory restrictions.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pt-24 pb-12 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800" id="contact">
+        <div class="max-w-[1920px] mx-auto px-6 lg:px-12">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 mb-24">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-6">
+
+                    <img alt="Logo RAVEN" class="h-16 w-auto dark:hidden" 
+                        src="static/img/logo-light.jpg" 
+                        onerror="this.src='https://placehold.co/40x40/000000/FFFFFF?text=R'"/>
+                    
+                    <img alt="Logo RAVEN" class="h-16 w-auto dark:block" 
+                        src="static/img/logo-dark.jpg" 
+                        onerror="this.src='https://placehold.co/40x40/FFFFFF/000000?text=R'"/>
+
+                        <div class="h-12 w-[1px] bg-gray-300 dark:bg-gray-700 mx-2"></div>
+                        <p class="text-base tracking-[0.2em] text-accent-gray dark:text-gray-400 font-bold uppercase">Intelligence. Vision. Adaptability.</p>
+                    </div>
+                </div>
+                <span class="font-display font-extrabold text-3xl tracking-tighter uppercase">Raven</span>
+            </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 w-full lg:w-auto">
+                    <a class="group flex items-center gap-5" href="mailto:info@ravensas.com">
+                        <span class="material-symbols-outlined p-4 bg-gray-50 dark:bg-gray-900 group-hover:bg-primary group-hover:text-white transition-all text-2xl">mail</span>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-accent-gray font-bold mb-1">Email</p>
+                            <p class="text-lg font-medium dark:text-white">info@ravensas.com</p>
+                        </div>
+                    </a>
+                    <a class="group flex items-center gap-5" href="tel:+573150642655">
+                        <span class="material-symbols-outlined p-4 bg-gray-50 dark:bg-gray-900 group-hover:bg-primary group-hover:text-white transition-all text-2xl">call</span>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-accent-gray font-bold mb-1">Contact</p>
+                            <p class="text-lg font-medium dark:text-white">+57 3150642655</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-gray-100 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-accent-gray uppercase tracking-[0.2em] font-medium">© 2025 RAVEN SAS. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">January 2026 Edition</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
