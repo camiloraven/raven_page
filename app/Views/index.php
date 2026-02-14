@@ -16,10 +16,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-        <link rel="apple-touch-icon" sizes="180x180" href="https://camiloraven.github.io/raven_page/static/icons/180x180.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="https://camiloraven.github.io/raven_page/static/icons/32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://camiloraven.github.io/raven_page/static/icons/16x16.png">
-        <link rel="shortcut icon" href="https://camiloraven.github.io/raven_page/static/icons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/180x180.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/16x16.png">
+        <link rel="shortcut icon" href="/icons/favicon.ico">
         <meta name="msapplication-TileColor" content="#0a0a0a">
         <meta name="theme-color" content="#0a0a0a">
 
@@ -27,7 +27,7 @@
         <meta property="og:url" content="https://camiloraven.github.io/raven_page/">
         <meta property="og:title" content="RAVEN | Intelligence. Vision. Adaptability.">
         <meta property="og:description" content="Engineering excellence and digital innovation for the Oil & Gas industry.">
-        <meta property="og:image" content="https://camiloraven.github.io/raven_page/static/img/sc_hero.jpg">
+        <meta property="og:image" content="/img/sc_hero.jpg">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="592">
         <meta property="og:image:type" content="image/jpeg">
@@ -36,7 +36,7 @@
         <meta name="twitter:site" content="@ravensas">
         <meta name="twitter:title" content="RAVEN | Intelligence. Vision. Adaptability.">
         <meta name="twitter:description" content="9 years of experience blending Subsurface expertise and Digital Transformation.">
-        <meta name="twitter:image" content="https://camiloraven.github.io/raven_page/static/img/sc_hero.jpg">
+        <meta name="twitter:image" content="/img/sc_hero.jpg">
 
         <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
         <script>
@@ -76,8 +76,8 @@
             <div class="max-w-[1920px] mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
                 <div class="flex items-center gap-4">
                     <div class="relative h-12">
-                        <img alt="Logo RAVEN" class="h-12 w-auto dark:hidden" src="static/img/logo-light.jpg" onerror="this.src='https://placehold.co/40x40/000000/FFFFFF?text=R'"/>
-                        <img alt="Logo RAVEN" class="h-12 w-auto hidden dark:block" src="static/img/logo-dark.jpg" onerror="this.src='https://placehold.co/40x40/FFFFFF/000000?text=R'"/>
+                        <img alt="Logo RAVEN" class="h-12 w-auto dark:hidden" src="/img/logo-light.jpg" onerror="this.src='https://placehold.co/40x40/000000/FFFFFF?text=R'"/>
+                        <img alt="Logo RAVEN" class="h-12 w-auto hidden dark:block" src="/img/logo-dark.jpg" onerror="this.src='https://placehold.co/40x40/FFFFFF/000000?text=R'"/>
                     </div>
                     <span class="font-display font-extrabold text-3xl tracking-tighter uppercase">Raven</span>
                 </div>
@@ -109,7 +109,7 @@
             <div class="absolute inset-0 z-0">
                 <img alt="Raven Hero Image" 
                     class="w-full h-full object-cover object-right lg:object-center opacity-60" 
-                    src="static/img/hero_image.jpg" 
+                    src="/img/hero_image.jpg" 
                     onerror="this.src='https://placehold.co/1920x1080/111111/333333?text=Hero+Image'"/>
                 <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent"></div>
             </div>
@@ -117,7 +117,7 @@
             <div class="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-12 w-full pt-20">
                 <div class="max-w-4xl text-white">
                     
-                    <img src="static/img/logo-dark.jpg" 
+                    <img src="/img/logo-dark.jpg" 
                         alt="Raven Logo" 
                         class="h-28 md:h-36 w-auto mb-8 object-contain" 
                         onerror="this.style.display='none'"/>
@@ -314,8 +314,8 @@
                     
                     <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
                         <div class="relative h-16 w-auto">
-                            <img alt="Logo RAVEN" class="h-16 w-auto dark:hidden" src="static/img/logo-light.jpg" onerror="this.src='https://placehold.co/64x64/000000/FFFFFF?text=R'"/>
-                            <img alt="Logo RAVEN" class="h-16 w-auto hidden dark:block" src="static/img/logo-dark.jpg" onerror="this.src='https://placehold.co/64x64/FFFFFF/000000?text=R'"/>
+                            <img alt="Logo RAVEN" class="h-16 w-auto dark:hidden" src="/img/logo-light.jpg" onerror="this.src='https://placehold.co/64x64/000000/FFFFFF?text=R'"/>
+                            <img alt="Logo RAVEN" class="h-16 w-auto hidden dark:block" src="/img/logo-dark.jpg" onerror="this.src='https://placehold.co/64x64/FFFFFF/000000?text=R'"/>
                         </div>
                         <div class="hidden md:block h-12 w-[1px] bg-gray-300 dark:bg-gray-700"></div>
                         <div class="space-y-1">
