@@ -49,8 +49,16 @@ class Blog extends BaseController
             'keywords'         => $this->request->getPost('keywords'),
         ];
 
+        // Manejo de la imagen
+        $img = $this->request->getFile('image');
+        if ($img && $img->isValid() && ! $img->hasMoved()) {
+            $newName = $img->getRandomName();
+            $img->move(ROOTPATH . 'public/uploads/blog', $newName);
+            $data['image'] = $newName; 
+        }
+
         $model->save($data);
-        return redirect()->to('/blog');
+        return redirect()->to($this->request->getLocale() . '/blog');
     }
 
     // Ver un artículo individual (Genera la página SEO)
@@ -70,6 +78,96 @@ class Blog extends BaseController
             'meta_description' => $post['meta_description'],
             'keywords'         => $post['keywords']
         ]);
+    }
+
+    public function edit($id)
+    {
+        if (! session()->get('isLoggedIn')) {
+            return redirect()->to($this->request->getLocale() . '/login');
+        }
+
+        $model = new Post();
+        $post = $model->find($id);
+
+        if (!$post) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        helper('form');
+        return view('blog_edit', [
+            'post'  => $post,
+            'title' => 'Editar Artículo'
+        ]);
+    }
+
+    public function update($id)
+    {
+        if (! session()->get('isLoggedIn')) {
+            return redirect()->to($this->request->getLocale() . '/login');
+        }
+
+        $model = new Post();
+        $post = $model->find($id);
+
+        if (!$post) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        // Regeneramos el slug desde el nuevo título
+        $slug = url_title($this->request->getPost('title'), '-', true);
+
+        $data = [
+            'id'               => $id,
+            'title'            => $this->request->getPost('title'),
+            'slug'             => $slug,
+            'content'          => $this->request->getPost('content'),
+            'meta_title'       => $this->request->getPost('meta_title') ?: $this->request->getPost('title'),
+            'meta_description' => $this->request->getPost('meta_description'),
+            'keywords'         => $this->request->getPost('keywords'),
+        ];
+
+        // Manejo de la imagen: solo reemplazar si se sube una nueva
+        $img = $this->request->getFile('image');
+        if ($img && $img->isValid() && ! $img->hasMoved()) {
+            // Eliminar imagen anterior si existe
+            if (!empty($post['image'])) {
+                $oldPath = ROOTPATH . 'public/uploads/blog/' . $post['image'];
+                if (file_exists($oldPath)) {
+                    unlink($oldPath);
+                }
+            }
+            $newName = $img->getRandomName();
+            $img->move(ROOTPATH . 'public/uploads/blog', $newName);
+            $data['image'] = $newName;
+        }
+
+        $model->save($data);
+        return redirect()->to($this->request->getLocale() . '/blog/' . $slug);
+    }
+
+    public function delete($id)
+    {
+        if (! session()->get('isLoggedIn')) {
+            return redirect()->to($this->request->getLocale() . '/login');
+        }
+
+        $model = new Post();
+        $post = $model->find($id);
+
+        if (!$post) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        // Eliminar la imagen del servidor si existe
+        if (!empty($post['image'])) {
+            $imgPath = ROOTPATH . 'public/uploads/blog/' . $post['image'];
+            if (file_exists($imgPath)) {
+                unlink($imgPath);
+            }
+        }
+
+        $model->delete($id);
+        return redirect()->to($this->request->getLocale() . '/blog');
     }
 
 }

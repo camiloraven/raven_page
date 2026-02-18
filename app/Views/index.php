@@ -1,358 +1,227 @@
-<!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?= $this->extend('layouts/main') ?>
 
-        <title>RAVEN | Intelligence. Vision. Adaptability.</title>
-        <meta name="description" content="Modern consultancy firm specializing in Subsurface Oil & Gas expertise and Digital Transformation. Engineering excellence meets innovation.">
-        <meta name="keywords" content="Oil and Gas, Digital Transformation, Engineering, Consultancy, Data Science, Ravensas">
-        <meta name="author" content="Raven SAS">
-        <meta name="robots" content="index, follow">
+<?= $this->section('title') ?><?= lang('index_t.metaTitle') ?><?= $this->endSection() ?>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<?= $this->section('meta_tags') ?>
+    <meta name="description" content="<?= lang('index_t.metaDescription') ?>">
+    <meta name="keywords" content="<?= lang('index_t.metaKeywords') ?>">
+    <meta name="author" content="Raven SAS">
+    <meta name="robots" content="index, follow">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/180x180.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/16x16.png">
-        <link rel="shortcut icon" href="/icons/favicon.ico">
-        <meta name="msapplication-TileColor" content="#0a0a0a">
-        <meta name="theme-color" content="#0a0a0a">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://camiloraven.github.io/raven_page/">
+    <meta property="og:title" content="<?= lang('index_t.metaTitle') ?>">
+    <meta property="og:description" content="<?= lang('index_t.metaOgDescription') ?>"> 
+    <meta property="og:image" content="/img/sc_hero.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="592">
+    <meta property="og:image:type" content="image/jpeg">
 
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://camiloraven.github.io/raven_page/">
-        <meta property="og:title" content="RAVEN | Intelligence. Vision. Adaptability.">
-        <meta property="og:description" content="Engineering excellence and digital innovation for the Oil & Gas industry.">
-        <meta property="og:image" content="/img/sc_hero.jpg">
-        <meta property="og:image:width" content="1200">
-        <meta property="og:image:height" content="592">
-        <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ravensas">
+    <meta name="twitter:title" content="<?= lang('index_t.metaTitle') ?>">
+    <meta name="twitter:description" content="<?= lang('index_t.metaTwitterDescription') ?>">
+    <meta name="twitter:image" content="/img/sc_hero.jpg">
+<?= $this->endSection() ?>
 
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@ravensas">
-        <meta name="twitter:title" content="RAVEN | Intelligence. Vision. Adaptability.">
-        <meta name="twitter:description" content="9 years of experience blending Subsurface expertise and Digital Transformation.">
-        <meta name="twitter:image" content="/img/sc_hero.jpg">
+<?= $this->section('content') ?>
 
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-        <script>
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: "#111111",
-                            "background-light": "#ffffff",
-                            "background-dark": "#0a0a0a",
-                            "accent-gray": "#666666"
-                        },
-                        fontFamily: {
-                            sans: ["Inter", "sans-serif"],
-                            display: ["Montserrat", "sans-serif"],
-                        }
-                    },
-                },
-            };
-        </script>
+    <section class="relative h-[100vh] w-full flex items-start overflow-hidden bg-black -mt-24">
+        <div class="absolute inset-0 z-0">
+            <img alt="Raven Hero Image" 
+                class="w-full h-full object-cover object-right lg:object-center opacity-60" 
+                src="/img/hero_image.jpg" 
+                onerror="this.src='https://placehold.co/1920x1080/111111/333333?text=Hero+Image'"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent"></div>
+        </div>
         
-        <style type="text/tailwindcss">
-            @layer utilities {
-                .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-                .dropdown:hover .dropdown-menu { display: block; }
-                /* Solo el Hero mantiene la proporción cinematográfica */
-                @media (min-width: 1024px) {
-                    .hero-16-9 { min-height: 56.25vw; }
-                }
-            }
-        </style>
-    </head>
+        <div class="relative z-10 max-w-[1920px] mx-auto px-8 md:px-16 lg:px-32 w-full pt-20">
+            <div class="max-w-4xl text-white">
+                
+                <img src="/img/logo-dark.jpg" 
+                    alt="Raven Logo" 
+                    class="h-28 md:h-36 w-auto mb-8 object-contain" 
+                    onerror="this.style.display='none'"/>
 
-    <body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300 pt-24">
-        <nav class="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
-            <div class="max-w-[1920px] mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
-                <div class="flex items-center gap-4">
-                    <div class="relative h-12">
-                        <img alt="Logo RAVEN" class="h-12 w-auto dark:hidden" src="/img/logo-light.jpg" onerror="this.src='https://placehold.co/40x40/000000/FFFFFF?text=R'"/>
-                        <img alt="Logo RAVEN" class="h-12 w-auto hidden dark:block" src="/img/logo-dark.jpg" onerror="this.src='https://placehold.co/40x40/FFFFFF/000000?text=R'"/>
-                    </div>
-                    <span class="font-display font-extrabold text-3xl tracking-tighter uppercase">Raven</span>
+                <div class="w-24 h-1 bg-white mb-10"></div>
+                
+                <h1 class="font-display text-[10vw] sm:text-5xl md:text-4xl lg:text-5xl font-extrabold mb-8 leading-[0.95] sm:leading-none uppercase tracking-tighter">
+                    <?= lang('index_t.heroTitleLine1') ?><br/>
+                    <?= lang('index_t.heroTitleLine2') ?><br/>
+                    <?= lang('index_t.heroTitleLine3') ?>
+                </h1>
+
+                <p class="text-lg sm:text-2xl md:text-3xl text-gray-200 font-light leading-relaxed mb-12 border-l-4 border-white/50 pl-6 lg:pl-8 max-w-2xl">
+                    <?= lang('index_t.heroSubtitle') ?>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row flex-wrap gap-6">
+                    <a class="bg-white text-black px-10 py-5 font-bold uppercase tracking-widest hover:bg-gray-200 transition-all text-sm text-center" href="#offering"> <?= lang('index_t.heroExploreBtn') ?> </a>
+                    <a class="border border-white/50 text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all text-sm backdrop-blur-sm text-center" href="#about"><?= lang('index_t.heroWhoBtn') ?></a>
                 </div>
-                <div class="flex items-center gap-6 lg:gap-12">            
-                    <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors flex items-center justify-center" 
-                            onclick="document.documentElement.classList.toggle('dark')">
-                        <span class="material-symbols-outlined block dark:hidden text-2xl">dark_mode</span>
-                        <span class="material-symbols-outlined hidden dark:block text-2xl">light_mode</span>
-                    </button>
-                    <div class="hidden md:flex items-center gap-12 text-sm font-bold uppercase tracking-widest">
-                        <a class="hover:text-accent-gray transition-colors" href="#about">Who We Are</a>
-                        <div class="relative dropdown group">
-                            <button class="flex items-center gap-1 hover:text-accent-gray transition-colors uppercase tracking-widest font-bold">
-                                Services <span class="material-symbols-outlined text-sm">expand_more</span>
-                            </button>
-                            <div class="dropdown-menu hidden absolute top-full left-0 w-48 bg-white dark:bg-black border border-gray-100 dark:border-gray-800 shadow-xl py-4">
-                                <a class="block px-6 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors" href="#offering">Consultancy</a>
-                                <a class="block px-6 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors" href="#synthetic-data">Synthetic Data</a>
-                            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full flex flex-col justify-center py-24 bg-white dark:bg-background-dark" id="about">
+        <div class="max-w-[1920px] mx-auto px-8 md:px-16 lg:px-32 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                
+                <div class="lg:col-span-4">
+                    <span class="text-accent-gray dark:text-gray-500 font-bold uppercase tracking-[0.3em] text-sm block mb-6"><?= lang('index_t.aboutLabel') ?></span>
+                    <h2 class="text-3xl md:text-4xl font-display font-medium mb-8 dark:text-gray-200 leading-tight text-gray-800">
+                        <?= lang('index_t.aboutTitleL1') ?> <br class="hidden lg:block"><?= lang('index_t.aboutTitleL2') ?> 
+                    </h2>
+                    <div class="w-20 h-1.5 bg-primary dark:bg-white mb-8"></div>
+                </div>
+
+                <div class="lg:col-span-8 space-y-10 text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed font-light">
+                    
+                    <p class="max-w-3xl">
+                        <?= lang('index_t.aboutParagraph1') ?>
+                    </p>
+
+                    <p class="max-w-3xl">
+                        <?= lang('index_t.aboutParagraph2') ?>
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 border-t border-gray-100 dark:border-gray-800 pt-12">
+                        <div class="max-w-xs">
+                            <p class="text-xs font-bold uppercase tracking-widest text-accent-gray mb-4"><?= lang('index_t.aboutModelTitle') ?></p>
+                            <p class="text-lg leading-snug"><?= lang('index_t.aboutModelText') ?></p>
                         </div>
-                        <a class="px-6 py-3 bg-primary text-white hover:bg-gray-800 transition-all rounded-sm" href="#contact">Contact Us</a>
+                        <div class="max-w-xs">
+                            <p class="text-xs font-bold uppercase tracking-widest text-accent-gray mb-4"><?= lang('index_t.aboutPhilosophyTitle') ?></p>
+                            <p class="text-lg leading-snug"><?= lang('index_t.aboutPhilosophyText') ?></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </nav>    
+        </div>
+    </section>
 
-        
-        <section class="relative h-screen w-full flex items-center overflow-hidden bg-black">
-            <div class="absolute inset-0 z-0">
-                <img alt="Raven Hero Image" 
-                    class="w-full h-full object-cover object-right lg:object-center opacity-60" 
-                    src="/img/hero_image.jpg" 
-                    onerror="this.src='https://placehold.co/1920x1080/111111/333333?text=Hero+Image'"/>
-                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent"></div>
+    <section class="w-full flex flex-col justify-center py-20 bg-gray-50 dark:bg-black/20 overflow-hidden relative" id="offering">
+        <div class="max-w-[1920px] mx-auto px-8 md:px-16 lg:px-32 w-full relative z-10">
+            <div class="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-20">
+                <div class="w-full lg:w-4/12 relative">
+                    <div class="relative z-10">
+                        <span class="text-accent-gray dark:text-gray-500 font-bold uppercase tracking-[0.3em] text-sm block mb-6"><?= lang('index_t.solutionsLabel') ?></span>
+                        <h2 class="text-3xl font-display font-medium dark:text-gray-200 leading-snug text-gray-800"><?= lang('index_t.solutionsTitle') ?></h2>
+                        <div class="w-20 h-1.5 bg-primary dark:bg-white mt-8 mb-16"></div>
+                    </div>
+                    <div class="absolute top-0 right-0 -mt-10 -mr-10 opacity-[0.05] dark:opacity-[0.4] scale-150 pointer-events-none lg:relative lg:mt-0 lg:mr-0 lg:opacity-100 lg:scale-100 lg:flex lg:items-center lg:justify-center lg:w-[340px] lg:h-[340px]">
+                        <svg class="w-[300px] h-[280px] lg:w-full lg:h-full text-gray-900 dark:text-white lg:text-gray-300 lg:dark:text-gray-500" fill="none" viewBox="0 0 300 280">
+                            <path class="opacity-80 dark:opacity-100 triangle-path" d="M150 30 L270 240 L30 240 Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>                        
+                            <path class="opacity-30 dark:opacity-60" d="M150 45 L255 225 L45 225 Z" stroke="currentColor" stroke-dasharray="6 6" stroke-linejoin="round" stroke-width="1"></path>
+                        </svg>
+                        <div class="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 text-center">
+                            <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest whitespace-nowrap"><?= lang('index_t.oilGasTitle') ?></span>
+                        </div>
+                        <div class="hidden lg:block absolute bottom-6 left-0 -translate-x-6 text-right">
+                            <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest block leading-tight"><?= lang('index_t.projectTitle') ?></span>
+                        </div>
+                        <div class="hidden lg:block absolute bottom-6 right-0 translate-x-6 text-left">
+                            <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest block leading-tight"><?= lang('index_t.dataScienceTitle') ?></span>
+                        </div>
+                        <div class="hidden lg:flex absolute inset-0 items-center justify-center pointer-events-none">
+                            <div class="bg-white dark:bg-gray-800 p-4 rounded-full border border-gray-100 dark:border-gray-600 shadow-sm flex items-center justify-center w-16 h-16">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-gray-700 dark:text-white">
+                                    <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-8/12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-2 gap-y-12 gap-x-8 lg:gap-x-12 border-l-0 lg:border-l border-gray-200 dark:border-gray-800 lg:pl-16 relative z-10">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-6 h-[2px] bg-primary dark:bg-white"></span>
+                            <h3 class="font-display font-bold text-lg uppercase tracking-widest text-primary dark:text-white"><?= lang('index_t.oilGasTitle') ?></h3>
+                        </div>
+                        <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                            <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p><?= lang('index_t.oilGasItem1') ?></p></li>
+                            <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p><?= lang('index_t.oilGasItem2') ?></p></li>
+                            <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p><?= lang('index_t.oilGasItem3') ?></p></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-6 h-[2px] bg-primary dark:bg-white"></span>
+                            <h3 class="font-display font-bold text-lg uppercase tracking-widest text-primary dark:text-white"><?= lang('index_t.projectTitle') ?></h3>
+                        </div>
+                        <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                            <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p><?= lang('index_t.projectItem1') ?></p></li>
+                            <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p><?= lang('index_t.projectItem2') ?></p></li>
+                            <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p><?= lang('index_t.projectItem3') ?></p></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-6 md:col-span-1 lg:col-span-1 xl:col-span-1">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-6 h-[2px] bg-primary dark:bg-white"></span>
+                            <h3 class="font-display font-bold text-lg uppercase tracking-widest text-primary dark:text-white"><?= lang('index_t.dataScienceTitle') ?></h3>
+                        </div>
+                        <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                            <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p><?= lang('index_t.dataItem1') ?></p></li>
+                            <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p><?= lang('index_t.dataItem2') ?></p></li>
+                            <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p><?= lang('index_t.dataItem3') ?></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ratio-16-9 w-full flex flex-col justify-center py-20 bg-gray-50 dark:bg-black/40" id="synthetic-data">
+        <div class="max-w-[1920px] mx-auto px-8 md:px-16 lg:px-32 w-full">
+            <div class="mb-20">
+                <span class="text-accent-gray dark:text-gray-500 font-bold uppercase tracking-[0.3em] text-sm block mb-6"><?= lang('index_t.coreLabel') ?></span>
+                <h2 class="text-2xl md:text-3xl font-display font-medium dark:text-gray-200 leading-snug text-gray-800"><?= lang('index_t.coreTitle') ?></h2>
+                <div class="w-20 h-1.5 bg-primary dark:bg-white mt-8"></div>
             </div>
             
-            <div class="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-12 w-full pt-20">
-                <div class="max-w-4xl text-white">
-                    
-                    <img src="/img/logo-dark.jpg" 
-                        alt="Raven Logo" 
-                        class="h-28 md:h-36 w-auto mb-8 object-contain" 
-                        onerror="this.style.display='none'"/>
-
-                    <div class="w-24 h-1 bg-white mb-10"></div>
-                    
-                    <h1 class="font-display text-[10vw] sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[0.95] sm:leading-none uppercase tracking-tighter">
-                        Intelligence.<br/>
-                        Vision.<br/>
-                        Adaptability.
-                    </h1>
-
-                    <p class="text-lg sm:text-2xl md:text-3xl text-gray-200 font-light leading-relaxed mb-12 border-l-4 border-white/50 pl-6 lg:pl-8 max-w-2xl">
-                        Modern consultancy at the intersection of engineering excellence and digital innovation.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row flex-wrap gap-6">
-                        <a class="bg-white text-black px-10 py-5 font-bold uppercase tracking-widest hover:bg-gray-200 transition-all text-sm text-center" href="#offering">Explore Solutions</a>
-                        <a class="border border-white/50 text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all text-sm backdrop-blur-sm text-center" href="#about">Who We Are</a>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="p-16 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all group h-full flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-6 mb-10">
+                            <span class="material-symbols-outlined text-5xl group-hover:scale-110 transition-transform dark:text-white">target</span>
+                            <h4 class="text-3xl font-bold uppercase dark:text-white"><?= lang('index_t.objectiveTitle') ?></h4>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-2xl leading-relaxed mb-10 font-light">
+                            <?= lang('index_t.objectiveText') ?>
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 text-base text-accent-gray mt-auto">
+                        <span class="w-16 h-[2px] bg-accent-gray"></span>
+                        <span class="font-medium tracking-wide uppercase text-sm"><?= lang('index_t.objectiveFooter') ?></span>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="w-full flex flex-col justify-center py-24 bg-white dark:bg-background-dark" id="about">
-            <div class="max-w-[1920px] mx-auto px-6 lg:px-12 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-                    
-                    <div class="lg:col-span-4">
-                        <span class="text-accent-gray dark:text-gray-500 font-bold uppercase tracking-[0.3em] text-sm block mb-6">Who We Are</span>
-                        <h2 class="text-3xl md:text-4xl font-display font-medium mb-8 dark:text-gray-200 leading-tight text-gray-800">
-                            Built on nine years <br class="hidden lg:block"> of transformation.
-                        </h2>
-                        <div class="w-20 h-1.5 bg-primary dark:bg-white mb-8"></div>
-                    </div>
-
-                    <div class="lg:col-span-8 space-y-10 text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed font-light">
-                        
-                        <p class="max-w-3xl">
-                            We are a <strong class="text-primary dark:text-white font-semibold">modern consultancy firm based in Colombia</strong>, <br class="hidden lg:block"> 
-                            built on the intersection of engineering excellence <br class="hidden lg:block"> 
-                            and digital innovation.
-                        </p>
-
-                        <p class="max-w-3xl">
-                            With 9 years of experience combining expertise in subsurface <br class="hidden lg:block"> 
-                            Oil & Gas and Digital Transformation, we bring together a team <br class="hidden lg:block"> 
-                            with over 100 years of combined industrial knowledge.
-                        </p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 border-t border-gray-100 dark:border-gray-800 pt-12">
-                            <div class="max-w-xs">
-                                <p class="text-xs font-bold uppercase tracking-widest text-accent-gray mb-4">Our Model</p>
-                                <p class="text-lg leading-snug">We operate through an agile partner-based model, leveraging a robust network of collaborators.</p>
-                            </div>
-                            <div class="max-w-xs">
-                                <p class="text-xs font-bold uppercase tracking-widest text-accent-gray mb-4">Our Philosophy</p>
-                                <p class="text-lg leading-snug">Centered on <span class="italic text-primary dark:text-white font-medium">efficient task management, measurable impact, and continuous improvement</span>.</p>
-                            </div>
+                
+                <div class="p-16 bg-primary text-white border border-primary hover:shadow-2xl transition-all group h-full flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-6 mb-10">
+                            <span class="material-symbols-outlined text-5xl group-hover:scale-110 transition-transform">auto_graph</span>
+                            <h4 class="text-3xl font-bold uppercase"><?= lang('index_t.businessTitle') ?></h4>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="w-full flex flex-col justify-center py-20 bg-gray-50 dark:bg-black/20 overflow-hidden relative" id="offering">
-            <div class="max-w-[1920px] mx-auto px-6 lg:px-12 w-full relative z-10">
-                <div class="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-20">
-                    <div class="w-full lg:w-4/12 relative">
-                        <div class="relative z-10">
-                            <span class="text-accent-gray dark:text-gray-500 font-bold uppercase tracking-[0.3em] text-sm block mb-6">Our Solutions</span>
-                            <h2 class="text-3xl font-display font-medium dark:text-gray-200 leading-snug text-gray-800">Service Ecosystem</h2>
-                            <div class="w-20 h-1.5 bg-primary dark:bg-white mt-8 mb-16"></div>
-                        </div>
-                        <div class="absolute top-0 right-0 -mt-10 -mr-10 opacity-[0.05] dark:opacity-[0.4] scale-150 pointer-events-none lg:relative lg:mt-0 lg:mr-0 lg:opacity-100 lg:scale-100 lg:flex lg:items-center lg:justify-center lg:w-[340px] lg:h-[340px]">
-                            <svg class="w-[300px] h-[280px] lg:w-full lg:h-full text-gray-900 dark:text-white lg:text-gray-300 lg:dark:text-gray-500" fill="none" viewBox="0 0 300 280">
-                                <path class="opacity-80 dark:opacity-100 triangle-path" d="M150 30 L270 240 L30 240 Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>                        
-                                <path class="opacity-30 dark:opacity-60" d="M150 45 L255 225 L45 225 Z" stroke="currentColor" stroke-dasharray="6 6" stroke-linejoin="round" stroke-width="1"></path>
-                            </svg>
-                            <div class="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 text-center">
-                                <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest whitespace-nowrap">Oil & Gas</span>
-                            </div>
-                            <div class="hidden lg:block absolute bottom-6 left-0 -translate-x-6 text-right">
-                                <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest block leading-tight">Project<br/>Management</span>
-                            </div>
-                            <div class="hidden lg:block absolute bottom-6 right-0 translate-x-6 text-left">
-                                <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest block leading-tight">Data<br/>Science</span>
-                            </div>
-                            <div class="hidden lg:flex absolute inset-0 items-center justify-center pointer-events-none">
-                                <div class="bg-white dark:bg-gray-800 p-4 rounded-full border border-gray-100 dark:border-gray-600 shadow-sm flex items-center justify-center w-16 h-16">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-gray-700 dark:text-white">
-                                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
-                                    </svg>
+                        <ul class="space-y-10">
+                            <li class="flex gap-8">
+                                <span class="text-white/30 font-display text-5xl font-bold">01</span>
+                                <div>
+                                    <p class="text-white text-2xl font-medium mb-2 uppercase"><?= lang('index_t.businessItem1Title') ?></p>
+                                    <p class="text-white/70 font-light text-lg"><?= lang('index_t.businessItem1Text') ?></p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full lg:w-8/12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-2 gap-y-12 gap-x-8 lg:gap-x-12 border-l-0 lg:border-l border-gray-200 dark:border-gray-800 lg:pl-16 relative z-10">
-                        <div class="space-y-6">
-                            <div class="flex items-center gap-3 mb-6">
-                                <span class="w-6 h-[2px] bg-primary dark:bg-white"></span>
-                                <h3 class="font-display font-bold text-lg uppercase tracking-widest text-primary dark:text-white">Oil & Gas</h3>
-                            </div>
-                            <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed">
-                                <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Skilled SMEs in G&G</p></li>
-                                <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Digital Transformation</p></li>
-                                <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Extensive Network</p></li>
-                            </ul>
-                        </div>
-                        <div class="space-y-6">
-                            <div class="flex items-center gap-3 mb-6">
-                                <span class="w-6 h-[2px] bg-primary dark:bg-white"></span>
-                                <h3 class="font-display font-bold text-lg uppercase tracking-widest text-primary dark:text-white">Project Mgt</h3>
-                            </div>
-                            <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed">
-                                <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Waterfall & Agile</p></li>
-                                <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Kanban / Kaizen</p></li>
-                                <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>AI Administration</p></li>
-                            </ul>
-                        </div>
-                        <div class="space-y-6 md:col-span-1 lg:col-span-1 xl:col-span-1">
-                            <div class="flex items-center gap-3 mb-6">
-                                <span class="w-6 h-[2px] bg-primary dark:bg-white"></span>
-                                <h3 class="font-display font-bold text-lg uppercase tracking-widest text-primary dark:text-white">Data Science</h3>
-                            </div>
-                            <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed">
-                                <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Data Processing</p></li>
-                                <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>Advanced Analytics</p></li>
-                                <li class="flex gap-4 items-start"><span class="material-symbols-outlined text-[18px] mt-1 text-accent-gray">check</span><p>ML & AI Development</p></li>
-                            </ul>
-                        </div>
+                            </li>
+                            <li class="flex gap-8">
+                                <span class="text-white/30 font-display text-5xl font-bold">02</span>
+                                <div>
+                                    <p class="text-white text-2xl font-medium mb-2 uppercase"><?= lang('index_t.businessItem2Title') ?></p>
+                                    <p class="text-white/70 font-light text-lg"><?= lang('index_t.businessItem2Text') ?></p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="ratio-16-9 w-full flex flex-col justify-center py-20 bg-gray-50 dark:bg-black/40" id="synthetic-data">
-            <div class="max-w-[1920px] mx-auto px-6 lg:px-12 w-full">
-                <div class="mb-20">
-                    <span class="text-accent-gray dark:text-gray-500 font-bold uppercase tracking-[0.3em] text-sm block mb-6">Core Offering</span>
-                    <h2 class="text-2xl md:text-3xl font-display font-medium dark:text-gray-200 leading-snug text-gray-800">Synthetic Data Engine</h2>
-                    <div class="w-20 h-1.5 bg-primary dark:bg-white mt-8"></div>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div class="p-16 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all group h-full flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-6 mb-10">
-                                <span class="material-symbols-outlined text-5xl group-hover:scale-110 transition-transform dark:text-white">target</span>
-                                <h4 class="text-3xl font-bold uppercase dark:text-white">Objective</h4>
-                            </div>
-                            <p class="text-gray-600 dark:text-gray-400 text-2xl leading-relaxed mb-10 font-light">
-                                Generation of realistic synthetic data from general field descriptions. Our engine allows for model calibration using real data points for unprecedented accuracy.
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-4 text-base text-accent-gray mt-auto">
-                            <span class="w-16 h-[2px] bg-accent-gray"></span>
-                            <span class="font-medium tracking-wide uppercase text-sm">Precise field description calibration</span>
-                        </div>
-                    </div>
-                    
-                    <div class="p-16 bg-primary text-white border border-primary hover:shadow-2xl transition-all group h-full flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-6 mb-10">
-                                <span class="material-symbols-outlined text-5xl group-hover:scale-110 transition-transform">auto_graph</span>
-                                <h4 class="text-3xl font-bold uppercase">Business Value</h4>
-                            </div>
-                            <ul class="space-y-10">
-                                <li class="flex gap-8">
-                                    <span class="text-white/30 font-display text-5xl font-bold">01</span>
-                                    <div>
-                                        <p class="text-white text-2xl font-medium mb-2 uppercase">Algorithm Testing</p>
-                                        <p class="text-white/70 font-light text-lg">Test algorithms and software with realistic data without compromising integrity.</p>
-                                    </div>
-                                </li>
-                                <li class="flex gap-8">
-                                    <span class="text-white/30 font-display text-5xl font-bold">02</span>
-                                    <div>
-                                        <p class="text-white text-2xl font-medium mb-2 uppercase">Data Anonymization</p>
-                                        <p class="text-white/70 font-light text-lg">Share data across departments or with partners without regulatory restrictions.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="pt-24 pb-12 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800" id="contact">
-            <div class="max-w-[1920px] mx-auto px-6 lg:px-12">
-                
-                <div class="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 mb-24">
-                    
-                    <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-                        <div class="relative h-16 w-auto">
-                            <img alt="Logo RAVEN" class="h-16 w-auto dark:hidden" src="/img/logo-light.jpg" onerror="this.src='https://placehold.co/64x64/000000/FFFFFF?text=R'"/>
-                            <img alt="Logo RAVEN" class="h-16 w-auto hidden dark:block" src="/img/logo-dark.jpg" onerror="this.src='https://placehold.co/64x64/FFFFFF/000000?text=R'"/>
-                        </div>
-                        <div class="hidden md:block h-12 w-[1px] bg-gray-300 dark:bg-gray-700"></div>
-                        <div class="space-y-1">
-                            <span class="font-display font-extrabold text-2xl tracking-tighter uppercase block text-primary dark:text-white">Raven</span>
-                            <p class="text-xs tracking-[0.2em] text-accent-gray dark:text-gray-400 font-bold uppercase">Intelligence. Vision. Adaptability.</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 w-full lg:w-auto">
-                        <a class="group flex items-center justify-center lg:justify-start gap-5" href="mailto:info@ravensas.com">
-                            <div class="p-4 bg-gray-50 dark:bg-gray-900 group-hover:bg-primary group-hover:text-white rounded-full transition-all duration-300">
-                                <span class="material-symbols-outlined text-2xl block">mail</span>
-                            </div>
-                            <div class="text-left">
-                                <p class="text-[10px] uppercase tracking-widest text-accent-gray font-bold mb-1">Email</p>
-                                <p class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-accent-gray transition-colors">info@ravensas.com</p>
-                            </div>
-                        </a>
-                        <a class="group flex items-center justify-center lg:justify-start gap-5" href="tel:+573150642655">
-                            <div class="p-4 bg-gray-50 dark:bg-gray-900 group-hover:bg-primary group-hover:text-white rounded-full transition-all duration-300">
-                                <span class="material-symbols-outlined text-2xl block">call</span>
-                            </div>
-                            <div class="text-left">
-                                <p class="text-[10px] uppercase tracking-widest text-accent-gray font-bold mb-1">Contact</p>
-                                <p class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-accent-gray transition-colors">+57 3150642655</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-                    <p class="text-[10px] text-accent-gray uppercase tracking-[0.2em] font-medium">
-                        © 2026 RAVEN SAS. All rights reserved.
-                    </p>
-                    <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">
-                        January 2026 Edition
-                    </p>
-                </div>
-            </div>
-        </footer>
-    </body>
-</html>
+<?= $this->endSection() ?>
