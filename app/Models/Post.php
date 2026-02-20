@@ -12,7 +12,9 @@ class Post extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields = ['title', 'slug', 'content', 'image', 'meta_title', 'meta_description', 'keywords'];
+    
+    // campos en la tabla 'posts'
+    protected $allowedFields = ['image', 'is_active'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -43,4 +45,27 @@ class Post extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+   
+    /**
+     * Obtiene todos los posts activos según el idioma solicitado
+     */
+    public function getPostsByLanguage($locale = 'es')
+    {
+        return $this->select('posts.*, t.title, t.slug, t.content, t.meta_title, t.meta_description, t.keywords')
+                    ->join('post_translations t', 't.post_id = posts.id')
+                    ->where('t.language_code', $locale)
+                    ->where('posts.is_active', 1)
+                    ->orderBy('posts.created_at', 'DESC')
+                    ->findAll();
+    }
+    
+    public function getPostBySlug($slug, $locale = 'es')
+    {
+        return $this->select('posts.*, t.title, t.slug, t.content, t.meta_title, t.meta_description, t.keywords')
+                    ->join('post_translations t', 't.post_id = posts.id')
+                    ->where('t.slug', $slug)
+                    ->where('t.language_code', $locale)
+                    ->where('posts.is_active', 1)
+                    ->first();
+    }
 }

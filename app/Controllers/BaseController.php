@@ -15,32 +15,23 @@ use Psr\Log\LoggerInterface;
  * ```
  *     class Home extends BaseController
  * ```
- *
- * For security, be sure to declare any new methods as protected or private.
  */
 abstract class BaseController extends Controller
 {
-    /**
-     * Be sure to declare properties for any property fetch you initialized.
-     * The creation of dynamic property is deprecated in PHP 8.2.
-     */
+    protected $helpers = ['session', 'language', 'url'];
 
-    // protected $session;
-    protected $helpers = ['session'];
+    protected $session;
 
-    /**
-     * @return void
-     */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
-        // Load here all helpers you want to be available in your controllers that extend BaseController.
-        // Caution: Do not put the this below the parent::initController() call below.
-        // $this->helpers = ['form', 'url'];
-
-        // Caution: Do not edit this line.
         parent::initController($request, $response, $logger);
 
-        // Preload any models, libraries, etc, here.
         $this->session = service('session');
+
+        // Obtener locale actual (detectado o por defecto)
+        $locale = $request->getLocale();
+
+        // Establecerlo correctamente en el request
+        $request->setLocale($locale);
     }
 }
