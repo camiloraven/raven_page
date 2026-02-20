@@ -41,12 +41,13 @@
         </div>
     </header>
     
-    <div class="prose lg:prose-xl text-gray-700 leading-relaxed">
+    <div class="prose lg:prose-xl dark:prose-invert mx-auto">
         <?= $post['content'] ?>
     </div>
 
     <div class="mt-8 pt-8 border-t border-gray-100">
-        <a href="/blog" class="text-blue-600 hover:underline">← Volver al listado</a>
+        <a href="href="<?= base_url(service('request')->getLocale() . '/blog') ?>" class="text-blue-600 hover:underline">← Volver al listado</a>
+        
     </div>
 </article>
 

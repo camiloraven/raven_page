@@ -23,37 +23,7 @@
         <meta name="msapplication-TileColor" content="#0a0a0a">
         <meta name="theme-color" content="#0a0a0a">
 
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-        <script>
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: "#111111",
-                            "background-light": "#ffffff",
-                            "background-dark": "#0a0a0a",
-                            "accent-gray": "#666666"
-                        },
-                        fontFamily: {
-                            sans: ["Inter", "sans-serif"],
-                            display: ["Montserrat", "sans-serif"],
-                        }
-                    },
-                },
-            };
-        </script>
-        
-        <style type="text/tailwindcss">
-            @layer utilities {
-                .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-                .dropdown:hover .dropdown-menu { display: block; }
-                /* Solo el Hero mantiene la proporción cinematográfica */
-                @media (min-width: 1024px) {
-                    .hero-16-9 { min-height: 56.25vw; }
-                }
-            }
-        </style>
+        <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
     </head>
 
     <body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300 pt-24">
