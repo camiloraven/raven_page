@@ -23,7 +23,7 @@
         <meta name="msapplication-TileColor" content="#0a0a0a">
         <meta name="theme-color" content="#0a0a0a">
 
-        <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('css/style.css?v=' . time()) ?>">
     </head>
 
     <body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300 pt-24">
@@ -82,7 +82,7 @@
                 </div>
 
                 <a class="block w-full text-xl font-bold uppercase tracking-widest text-gray-900 dark:text-white hover:text-accent-gray transition-colors" href="/#contact" onclick="document.getElementById('mobile-menu').classList.add('hidden')"><?= lang('navbar_t.contactUs') ?></a>
-                <a class="block w-full text-xl font-bold uppercase tracking-widest text-gray-900 dark:text-white hover:text-accent-gray transition-colors" href="/blog" onclick="document.getElementById('mobile-menu').classList.add('hidden')"><?= lang('navbar_t.blog') ?></a>
+                <a class="block w-full text-xl font-bold uppercase tracking-widest text-gray-900 dark:text-white hover:text-accent-gray transition-colors" href="<?= base_url(service('request')->getLocale() . '/blog') ?>" onclick="document.getElementById('mobile-menu').classList.add('hidden')"><?= lang('navbar_t.blog') ?></a>
 
                 <div class="h-[1px] bg-gray-100 dark:bg-gray-800 my-2"></div>
 
@@ -120,7 +120,7 @@
                         <div class="hidden md:block h-12 w-[1px] bg-gray-300 dark:bg-gray-700"></div>
                         <div class="space-y-1">
                             <span class="font-display font-extrabold text-2xl tracking-tighter uppercase block text-primary dark:text-white">Raven</span>
-                            <p class="text-xs tracking-[0.2em] text-accent-gray dark:text-gray-400 font-bold uppercase">Intelligence. Vision. Adaptability.</p>
+                            <p class="text-xs tracking-[0.2em] text-accent-gray dark:text-gray-400 font-bold uppercase"><?= lang('navbar_t.footer_line') ?></p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 w-full lg:w-auto">
@@ -138,7 +138,7 @@
                                 <span class="material-symbols-outlined text-2xl block">call</span>
                             </div>
                             <div class="text-left">
-                                <p class="text-[10px] uppercase tracking-widest text-accent-gray font-bold mb-1">Contact</p>
+                                <p class="text-[10px] uppercase tracking-widest text-accent-gray font-bold mb-1"><?= lang('navbar_t.contact') ?></p>
                                 <p class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-accent-gray transition-colors">+57 3150642655</p>
                             </div>
                         </a>
@@ -146,13 +146,14 @@
                 </div>
                 <div class="pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
                     <p class="text-[10px] text-accent-gray uppercase tracking-[0.2em] font-medium">
-                        © <?= date('Y') ?> RAVEN SAS. All rights reserved.
+                        © <?= date('Y') ?> <?= lang('navbar_t.policy') ?>
                     </p>
                     <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">
-                        January 2026 Edition
+                        <?= lang('navbar_t.date') ?>
                     </p>
                 </div>
             </div>
         </footer>
     </body>
 </html>
+

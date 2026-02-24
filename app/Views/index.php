@@ -29,13 +29,13 @@
     <section class="relative h-[100vh] w-full flex items-start overflow-hidden bg-black -mt-24">
         <div class="absolute inset-0 z-0">
             <img alt="Raven Hero Image" 
-                class="w-full h-full object-cover object-right lg:object-center opacity-60" 
+                class="w-full h-full object-cover object-[50%_center] lg:object-center opacity-60" 
                 src="/img/hero_image.jpg" 
                 onerror="this.src='https://placehold.co/1920x1080/111111/333333?text=Hero+Image'"/>
             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent"></div>
         </div>
         
-        <div class="relative z-10 max-w-[1920px] mx-auto px-8 md:px-16 lg:px-32 w-full pt-20">
+        <div class="relative z-10 max-w-[1920px] mx-auto px-8 md:px-13 lg:px-32 w-full pt-20">
             <div class="max-w-4xl text-white">
                 
                 <img src="/img/logo-dark.jpg" 
@@ -109,27 +109,16 @@
                         <h2 class="text-3xl font-display font-medium dark:text-gray-200 leading-snug text-gray-800"><?= lang('index_t.solutionsTitle') ?></h2>
                         <div class="w-20 h-1.5 bg-primary dark:bg-white mt-8 mb-16"></div>
                     </div>
-                    <div class="absolute top-0 right-0 -mt-10 -mr-10 opacity-[0.05] dark:opacity-[0.4] scale-150 pointer-events-none lg:relative lg:mt-0 lg:mr-0 lg:opacity-100 lg:scale-100 lg:flex lg:items-center lg:justify-center lg:w-[340px] lg:h-[340px]">
-                        <svg class="w-[300px] h-[280px] lg:w-full lg:h-full text-gray-900 dark:text-white lg:text-gray-300 lg:dark:text-gray-500" fill="none" viewBox="0 0 300 280">
-                            <path class="opacity-80 dark:opacity-100 triangle-path" d="M150 30 L270 240 L30 240 Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>                        
-                            <path class="opacity-30 dark:opacity-60" d="M150 45 L255 225 L45 225 Z" stroke="currentColor" stroke-dasharray="6 6" stroke-linejoin="round" stroke-width="1"></path>
-                        </svg>
-                        <div class="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 text-center">
-                            <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest whitespace-nowrap"><?= lang('index_t.oilGasTitle') ?></span>
-                        </div>
-                        <div class="hidden lg:block absolute bottom-6 left-0 -translate-x-6 text-right">
-                            <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest block leading-tight"><?= lang('index_t.projectTitle') ?></span>
-                        </div>
-                        <div class="hidden lg:block absolute bottom-6 right-0 translate-x-6 text-left">
-                            <span class="text-xs font-display font-bold text-gray-900 dark:text-white uppercase tracking-widest block leading-tight"><?= lang('index_t.dataScienceTitle') ?></span>
-                        </div>
-                        <div class="hidden lg:flex absolute inset-0 items-center justify-center pointer-events-none">
-                            <div class="bg-white dark:bg-gray-800 p-4 rounded-full border border-gray-100 dark:border-gray-600 shadow-sm flex items-center justify-center w-16 h-16">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-gray-700 dark:text-white">
-                                    <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </div>
+                    <div class="relative w-full flex justify-center lg:justify-start items-center">
+                        <img src="/img/services.jpg" 
+                             alt="Raven Solutions Model" 
+                             class="w-full max-w-[340px] md:max-w-[400px] lg:max-w-full h-auto object-contain dark:hidden 
+                                    mx-auto lg:mx-0 opacity-80 md:opacity-100">
+                        
+                        <img src="/img/services_dark.jpg" 
+                             alt="Raven Solutions Model" 
+                             class="w-full max-w-[340px] md:max-w-[400px] lg:max-w-full h-auto object-contain hidden dark:block 
+                                    mx-auto lg:mx-0 opacity-80 md:opacity-100">
                     </div>
                 </div>
                 <div class="w-full lg:w-8/12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-2 gap-y-12 gap-x-8 lg:gap-x-12 border-l-0 lg:border-l border-gray-200 dark:border-gray-800 lg:pl-16 relative z-10">

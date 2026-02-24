@@ -33,7 +33,7 @@ return [
     'solutionsLabel' => 'Nuestras Soluciones',
     'solutionsTitle' => 'Ecosistema de Servicios',
 
-    'oilGasTitle' => 'Oil & Gas',
+    'oilGasTitle' => 'Ptróleo y gas',
     'oilGasItem1' => 'Especialistas técnicos (SMEs) en G&G',
     'oilGasItem2' => 'Transformación Digital',
     'oilGasItem3' => 'Red de Expertos',
